@@ -3,7 +3,6 @@ from supabase import create_client, Client
 import os
 import time
 
-# Estas são minhas chaves de acesso ao supabase, não compartilhe com ninguém!!
 # Dentro do Dashboard do Projeto, selecionar Project Settings -> API -> API Settings
 
 # Copiar o valor de URL e colocar na variável url
@@ -16,10 +15,6 @@ supabase: Client = create_client(url, key)
 
 # Nome do bucket utilizado
 bucket_name: str = "Artaud"
-
-# Pega todas os arquivos do bucket
-res = supabase.storage.from_(bucket_name).list()
-# print(res)
 
 # Passa por todos os arquivos de um diretório
 lista_arquivos = os.listdir("./images")
